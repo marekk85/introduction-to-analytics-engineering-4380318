@@ -6,8 +6,7 @@ create view product_perf as
         , p.Price as Product_Price
         , sum(o.Quantity) as Total_Product_Sold
         , count(o.Order_Id) as Total_Product_Orders
-        , count(distinct c.Cust_Id) as Total_States
-
+        , count(distinct c.State) as Total_States
 from products p
 inner join orders o
     on o.product_id = p.product_id
